@@ -1,26 +1,15 @@
 import React, { FC } from 'react';
-
-interface IHelloWorld {
-    actions: any,
-    helloData: any;
-}
-
-type Item = {
-    completed: boolean,
-    id: number,
-    title: string,
-    userId: number
-}
+import { IHelloWorld, Item } from './HelloWorld.types';
+import { StyledHeader } from './HelloWorld.styled';
 
 const HelloWorld: FC<IHelloWorld> = ({
-    actions,
     helloData
 }) => {
     const tmpArray = [helloData]
 
     return (
         <div>
-            <p>HelloWorld</p>
+            <StyledHeader>HelloWorld</StyledHeader>
             {helloData.length !== 0 && tmpArray.map((item: Item) => {
                 return (
                     <li key={item.id}>
