@@ -10,18 +10,16 @@ import MenuItems from './components/Menu/MenuItems';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Menu>
-            <MenuItems />
-        </Menu>
-        <Switch>
-            {routesConfig.map(({ path, Component }, key) => (
-                <Route exact path={path} key={key} component={Component} />
-            ))}
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Menu>
+          <MenuItems />
+      </Menu>
+      <Switch>
+          {routesConfig.map(({ path, Component }, key) => (
+              <Route exact path={path} key={key} component={Component} />
+          ))}
+      </Switch>
+    </Router>
   );
 }
 

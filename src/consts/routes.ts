@@ -1,5 +1,5 @@
-import HelloWorldScreen from '../screens/HelloWorld';
-import PageScreen from '../screens/Page';
+import AlbumScreen from '../screens/Album';
+import SimplePage from '../screens/SimplePage';
 import NoMatchScreen from '../screens/NoMatch';
 
 export const routes = {
@@ -8,7 +8,7 @@ export const routes = {
 };
 
 export default [
-    { path: routes.index, name: 'Hello World', Component: HelloWorldScreen },
-    { path: routes.page, name: 'Hello World Page', Component: PageScreen },
+    { path: routes.index, name: 'Album', Component: AlbumScreen },
+    { path: routes.page, name: 'Simple Page', Component: SimplePage },
     { path: '*', name: '404', Component: NoMatchScreen },
 ];

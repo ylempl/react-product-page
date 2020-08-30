@@ -2,14 +2,14 @@ import {
     requestFetching,
     requestFetchingSuccess,
     requestFetchingError
-} from '../actions/helloWorld';
+} from '../actions/album';
 import { Dispatch } from 'redux';
 import apiRoutes from '../../consts/apiRoutes';
 
 const fetchRequest: Function = () => (dispatch: Dispatch) => {
     dispatch(requestFetching());
 
-    fetch(apiRoutes.getToDoList)
+    fetch(apiRoutes.getAlbumData)
         .then(res => res.json())
         .then((res) => {
             dispatch(requestFetchingSuccess(res));

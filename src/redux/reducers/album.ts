@@ -1,4 +1,4 @@
-import * as actions from '../actions/helloWorld'
+import * as actions from '../actions/album'
 
 type ActionType = {
     type: string;
@@ -8,11 +8,11 @@ type ActionType = {
 
 const initialState = {
     isFetching: false,
-    data: [],
+    album: [],
     error: {}
 };
 
-function helloWorld (state = initialState, action: ActionType) {
+function album (state = initialState, action: ActionType) {
     switch (action.type) {
         case actions.REQUEST_FETCHING:
             return {
@@ -39,4 +39,4 @@ function helloWorld (state = initialState, action: ActionType) {
     }
 }
 
-export default helloWorld;
+export default album;

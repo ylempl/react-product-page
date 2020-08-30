@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import helloWorld from './helloWorld';
+import album from './album';
 
 export default combineReducers({
-    helloWorld
+    album
 });

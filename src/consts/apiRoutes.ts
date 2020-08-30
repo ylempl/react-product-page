@@ -2,7 +2,7 @@
 // const baseUrl = location.origin; // useful when we want add url to current domain
 
 const apiRoutes = {
-    getToDoList: 'https://jsonplaceholder.typicode.com/todos/1',
+    getAlbumData: 'https://jsonplaceholder.typicode.com/photos',
 };
 
 export default apiRoutes;
