@@ -15,4 +15,5 @@ You will also see any lint errors in the console.
 
 ### `npm install && npm run start`
 
+Make sure you have the node installed.
 Default road to start project.
