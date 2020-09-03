@@ -6,6 +6,7 @@ import {
     ListItem
 } from '@material-ui/core';
 import routesConfig from '../../consts/routes';
+import roles from '../../consts/roles';
 
 export const StyledList = styled(List)`
     display: flex;
@@ -21,7 +22,7 @@ const MenuItems = () => {
 
     return (
         <StyledList>
-            {routesConfig.map(route => (
+            {routesConfig.filter((p: any) => p.roles.some((r:any) => roles.includes(r))).map((route: any) => (
                 <li key={route.path}>
                     <ListItem
                         button

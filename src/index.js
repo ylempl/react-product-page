@@ -1,18 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router'
 import { ThemeProvider } from 'styled-components';
 import theme from './theme/theme';
-import store from './redux/store';
+import store, { history } from './redux/store';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
+      <ConnectedRouter history={history}>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </ConnectedRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -6,7 +6,7 @@ import {
 
 const Menu = ({ children }: any) => {
     return (
-        <AppBar position="relative">
+        <AppBar position="static" color="default" elevation={0}>
             <Toolbar>
                 {children}
             </Toolbar>

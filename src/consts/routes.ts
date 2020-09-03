@@ -1,14 +1,15 @@
-import AlbumScreen from '../screens/Album';
-import SimplePage from '../screens/SimplePage';
+import strings from './strings';
 import NoMatchScreen from '../screens/NoMatch';
+import AlbumScreen from '../screens/Album';
+import Dashboard from '../screens/Dashboard';
 
 export const routes = {
     index: '/',
-    page: '/page',
+    album: '/album',
 };
 
 export default [
-    { path: routes.index, name: 'Album', Component: AlbumScreen },
-    { path: routes.page, name: 'Simple Page', Component: SimplePage },
-    { path: '*', name: '404', Component: NoMatchScreen },
+    { path: routes.index, name: strings.dashboard, Component: Dashboard, roles: ['ROLE_ADMIN'] },
+    { path: routes.album, name: strings.album, Component: AlbumScreen, roles: [] },
+    { path: '*', name: '404', Component: NoMatchScreen, roles: [] },
 ];
