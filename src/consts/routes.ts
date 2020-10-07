@@ -10,6 +10,6 @@ export const routes = {
 
 export default [
     { path: routes.index, name: strings.dashboard, Component: Dashboard, roles: ['ROLE_ADMIN'] },
-    { path: routes.album, name: strings.album, Component: AlbumScreen, roles: [] },
+    { path: routes.album, name: strings.album, Component: AlbumScreen, roles: ['ROLE_USER'] },
     { path: '*', name: '404', Component: NoMatchScreen, roles: [] },
 ];

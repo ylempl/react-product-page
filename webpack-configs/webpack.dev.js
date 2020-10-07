@@ -12,8 +12,7 @@ module.exports = merge(common, {
     plugins: [
         new BrowserSyncPlugin({
             open: false,
-            proxy: 'app.local',
-            host: '127.0.0.1'
+            proxy: 'app.local'
         })
     ]
 });

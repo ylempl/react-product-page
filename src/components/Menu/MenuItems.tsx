@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link as RouterLink, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import {
     List,
@@ -18,7 +18,12 @@ export const StyledList = styled(List)`
 
 const MenuItems = () => {
     const history = useHistory();
-    const selectedLink: string = history.location.pathname;
+    const [selectedLink, setSelectedLink] = useState(history.location.pathname);
+
+    const handleClick = (path: string) => {
+        history.push(path);
+        setSelectedLink(path);
+    };
 
     return (
         <StyledList>
@@ -26,8 +31,7 @@ const MenuItems = () => {
                 <li key={route.path}>
                     <ListItem
                         button
-                        component={RouterLink}
-                        to={route.path}
+                        onClick={() => handleClick(route.path)}
                         selected={selectedLink === route.path}
                         divider
                     >
