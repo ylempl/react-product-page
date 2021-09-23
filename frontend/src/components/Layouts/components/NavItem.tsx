@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useRef } from 'react';
 import {
     Button,
     ListItem,
@@ -50,6 +50,8 @@ const NavItem: FC<INavItem> = ({
     icon: Icon
 }) => {
     const classes = useStyles();
+    const burgerMenu = useRef<HTMLDivElement>(null);
+    if (burgerMenu.current) burgerMenu.current.focus();
 
     return (
         <ListItem
@@ -57,7 +59,6 @@ const NavItem: FC<INavItem> = ({
             disableGutters
         >
             <Button
-                activeClassName={classes.active}
                 className={classes.button}
                 component={RouterLink}
                 to={href}

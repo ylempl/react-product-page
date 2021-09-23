@@ -8,11 +8,6 @@ import {
     Form
 } from 'formik';
 import {
-    AzureAD,
-    AuthenticationState,
-    IAzureADFunctionProps
-} from 'react-aad-msal';
-import {
     Box,
     Button,
     Container,
@@ -22,8 +17,6 @@ import {
     Typography,
     makeStyles
 } from '@material-ui/core';
-import store from '../../redux/store';
-import { authProvider } from '../../services/authProvider';
 import FacebookIcon from '../../assets/icons/Facebook';
 import GoogleIcon from '../../assets/icons/Google';
 import Page from '../../components/Page/Page';
@@ -91,28 +84,15 @@ const LoginView = () => {
                             xs={12}
                             md={6}
                         >
-                            <AzureAD provider={authProvider} reduxStore={store}>
-                                {({ login, authenticationState }: IAzureADFunctionProps) => {
-                                    const isInProgress = authenticationState === AuthenticationState.InProgress;
-                                    const isUnauthenticated = authenticationState === AuthenticationState.Unauthenticated;
-
-                                    if (isUnauthenticated || isInProgress) {
-                                        return (
-                                            <Button
-                                                onClick={login}
-                                                color="secondary"
-                                                fullWidth
-                                                startIcon={<FacebookIcon />}
-                                                size="large"
-                                                variant="contained"
-                                            >
-                                                Login with Facebook
-                                            </Button>
-                                        );
-                                    }
-                                }}
-                            </AzureAD>
-
+                            <Button
+                                color="secondary"
+                                fullWidth
+                                startIcon={<FacebookIcon />}
+                                size="large"
+                                variant="contained"
+                            >
+                                Login with Facebook
+                            </Button>
                         </Grid>
                         <Grid
                             item

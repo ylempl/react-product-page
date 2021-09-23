@@ -1,19 +1,6 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import Dashboard from '../modules/Dashboard/Dashboard';
 
-const DashboardContainer = () => {
-    useEffect(() => {
-        // actions.fetchRequest();
-    }, []);
+const DashboardContainer = () => <Dashboard />
 
-    return (
-        <Dashboard />
-    );
-};
-
-const mapStateToProps = () => ({});
-
-const mapDispatchToProps = () => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
+export default DashboardContainer

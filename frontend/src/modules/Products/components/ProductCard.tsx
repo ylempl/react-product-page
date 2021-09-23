@@ -1,91 +1,63 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import {
-    Box,
-    Card,
-    CardContent,
-    CardHeader,
-    CardMedia,
-    Divider,
-    Typography,
-    List,
-    ListItem,
-    makeStyles
-} from '@material-ui/core';
-import { DataGrid } from '@material-ui/data-grid';
+    StyledBox,
+    StyledInput,
+    StyledButton
+} from './ProductCard.styles';
 
 interface IProductCard {
     product: any,
-    drupalData: any
 }
 
-const ProductCard: FC<IProductCard> = ({ product, drupalData }) => {
-    console.log(drupalData.title)
+const ProductCard: FC<IProductCard> = ({ product }) => {
+    const [color, setColor] = useState<string>('red');
+
+    const colorButtons = [
+        'red',
+        'blue',
+        'black'
+    ]
 
     return (
-        <>
-            {(product.length !== 0 || drupalData.length !== 0) && (
-                // <Card
-                //     className={classes.root}
-                // >
-                //     <CardHeader
-                //         title={product.ProductTradeName[0].en}
-                //         subheader={product.updated_at}
-                //     />
-                //     <CardMedia
-                //         image={product.MainImage}
-                //         className={classes.media}
-                //         title={product.ProductTradeName[0].en}
-                //     />
-                //     <CardContent>
-                //         <List>
-                //             <ListItem>
-                //                 <Box display="flex" justifyContent="space-between" flex={1}>
-                //                     <Typography variant="button">Resource Documents:</Typography>
-                //                     <Typography>{product.ResourceDocuments.length}</Typography>
-                //                 </Box>
-                //             </ListItem>
-                //             <Divider />
-                //         </List>
-                //     </CardContent>
-                // </Card>
-                <div style={{ height: 300, width: '100%' }}>
-                    <DataGrid
-                        rows={
-                            [
-                                {
-                                    id: 0, api: 'Drupal', title: drupalData[0].title, resDocs: drupalData[0].field_p_documents.length
-                                },
-                                {
-                                    id: 1, api: 'PIM API', title: product.ProductTradeName[0].en, resDocs: product.ResourceDocuments.length
-                                },
-                            ]
-                        }
-                        columns={
-                            [
-                                {
-                                    field: 'api',
-                                    headerName: 'API',
-                                    type: 'singleSelect',
-                                    width: 125
-                                },
-                                {
-                                    field: 'title',
-                                    headerName: 'Title',
-                                    type: 'singleSelect',
-                                    width: 125
-                                },
-                                {
-                                    field: 'resDocs',
-                                    headerName: 'Docs count',
-                                    type: 'singleSelect',
-                                    width: 225
-                                }
-                            ]
-                        }
-                    />
+        <StyledBox>
+            <div className="left-column">
+                <img data-image="'black'" className="active" src="../../../assets/paper.jpg" alt="" />
+            </div>
+            <div className="right-column">
+                <div className="product-description">
+                    <span>Headphones</span>
+                    <h1>Beats EP</h1>
+                    <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
                 </div>
-            )}
-        </>
+                <div className="product-configuration">
+                    <div className="product-color">
+                        <span>Color</span>
+                        <div className="color-choose">
+                            {colorButtons.map((c) => (
+                                <div key={c}>
+                                    <StyledInput type="radio" id={c} name="color" value={c} checked={color === c} onChange={() => setColor(c)} />
+                                    <label htmlFor={c}>
+                                        <div />
+                                        <span />
+                                    </label>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="cable-config">
+                        <span>Cable configuration</span>
+                        <div className="cable-choose">
+                            <StyledButton>Straight</StyledButton>
+                        </div>
+                        <a href="#">How to configurate your headphones</a>
+                    </div>
+                </div>
+                <div className="product-price">
+                    <span>148$</span>
+                    <a href="#" className="cart-btn">Add to cart</a>
+                </div>
+            </div>
+        </StyledBox>
     );
 };
 

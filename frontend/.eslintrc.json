@@ -18,8 +18,10 @@
     "rules": {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "react/prop-types": "off",
-        "no-unused-vars": "off",
+        "react/prop-types": 0,
+        "react/require-default-props": 0,
+        "react/no-array-index-key": 0,
+        "no-return-assign": 0,
         "@typescript-eslint/no-unused-vars": "warn",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -78,8 +80,29 @@
             {
                 "custom": "ignore"
             }
+        ],
+        "jsx-a11y/label-has-associated-control": [
+            "error",
+            {
+                "required": {
+                    "some": [
+                        "nesting",
+                        "id"
+                    ]
+                }
+            }
+        ],
+        "jsx-a11y/label-has-for": [
+            "error",
+            {
+                "required": {
+                    "some": [
+                        "nesting",
+                        "id"
+                    ]
+                }
+            }
         ]
-
     },
     "settings": {
         "react": {

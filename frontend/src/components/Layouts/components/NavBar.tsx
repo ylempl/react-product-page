@@ -11,9 +11,8 @@ import {
     makeStyles
 } from '@material-ui/core';
 import {
-    BarChart,
-    Warning,
-    FormatPaint
+    FormatPaint,
+    Dashboard
 } from '@material-ui/icons';
 import NavItem from './NavItem';
 
@@ -24,6 +23,11 @@ const user = {
 };
 
 const items = [
+    {
+        href: 'dashboard',
+        icon: Dashboard,
+        title: 'Dashboard'
+    },
     {
         href: 'products',
         icon: FormatPaint,
@@ -79,7 +83,6 @@ const NavBar: FC<INavBar> = ({ onMobileClose, openMobile }) => {
                 <Avatar
                     className={classes.avatar}
                     component={RouterLink}
-                    // src={user.avatar}
                     to="/"
                 />
                 <Typography
@@ -121,7 +124,7 @@ const NavBar: FC<INavBar> = ({ onMobileClose, openMobile }) => {
                     gutterBottom
                     variant="overline"
                 >
-                    Tikkurila 2021
+                    {`OfficeSupplies ${new Date().getFullYear()}`}
                 </Typography>
             </Box>
         </Box>
