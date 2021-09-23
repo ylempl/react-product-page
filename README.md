@@ -1,5 +1,5 @@
 # 🚀 Welcome to awesome project!
-![image](https://user-images.githubusercontent.com/10829554/134555903-f61fd5b0-61a1-460a-9c57-232d668a5e00.png)
+![image](https://user-images.githubusercontent.com/10829554/134556896-efe99ca3-a9c3-403f-985e-e42d52a56524.png)
 
 Go to /frontend and run:
 
