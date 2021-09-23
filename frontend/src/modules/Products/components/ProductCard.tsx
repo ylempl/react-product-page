@@ -25,9 +25,12 @@ const ProductCard: FC<IProductCard> = ({ product }) => {
             </div>
             <div className="right-column">
                 <div className="product-description">
-                    <span>Headphones</span>
-                    <h1>Beats EP</h1>
-                    <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+                    <span>Paper</span>
+                    <h1>Happy office paper</h1>
+                    <p>
+                        Wood-free white photocopier paper suitable for everyday printing designed mainly for black and white documents,
+                        which account for the majority of printouts in any office ensures fast printing and copying
+                    </p>
                 </div>
                 <div className="product-configuration">
                     <div className="product-color">
@@ -45,11 +48,12 @@ const ProductCard: FC<IProductCard> = ({ product }) => {
                         </div>
                     </div>
                     <div className="cable-config">
-                        <span>Cable configuration</span>
+                        <span>Paper Size</span>
                         <div className="cable-choose">
-                            <StyledButton>Straight</StyledButton>
+                            <StyledButton>A4</StyledButton>
+                            <StyledButton>A5</StyledButton>
                         </div>
-                        <a href="#">How to configurate your headphones</a>
+                        <a href="#">How to read paper size?</a>
                     </div>
                 </div>
                 <div className="product-price">
